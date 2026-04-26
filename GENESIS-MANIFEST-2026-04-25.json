@@ -1,0 +1,306 @@
+{
+  "standard": "PRS-001",
+  "standard_name": "Provably Rare Standard",
+  "standard_family": "DigitalOwnership Proof Standards",
+  "project": "DigitalOwnership",
+  "project_domain": "DigitalOwnership.org",
+  "creator": "Brandon Wells",
+  "status": "Genesis Draft",
+  "date_utc": "2026-04-25",
+  "manifest_type": "genesis_priority_artifact",
+  "purpose": "Define and publicly timestamp the first draft of PRS-001, a cryptographic rarity and provenance standard for digital assets.",
+  "core_claim": "Digital rarity can be measured by verifiable mathematical scarcity rather than subjective trait metadata alone.",
+  "tagline": "Rarity you can verify. Scarcity you can calculate. Ownership you can prove.",
+  "hash_algorithm": "SHA-256",
+  "rarity_basis": "leading_zero_bits",
+  "rarity_formula": "1 in 2^n, where n is the number of leading zero bits in the SHA-256 digest",
+  "scope": {
+    "included_in_prs_001": [
+      "SHA-256 leading-zero rarity classes",
+      "entropy anchor objects",
+      "NFT-compatible metadata fields",
+      "proof objects",
+      "Merkle leaf construction",
+      "single-root collection attestation",
+      "public/private proof boundaries",
+      "verification procedures",
+      "licensing categories for rare entropy anchors"
+    ],
+    "reserved_for_future_extensions": [
+      "multi-root lattices",
+      "Root of Roots structures",
+      "rarity-ordered roots",
+      "reverse-order roots",
+      "prime-index roots",
+      "Fibonacci-index roots",
+      "lineage roots",
+      "derivative roots",
+      "mutation roots",
+      "reproducibility roots",
+      "deterministic generation roots",
+      "proof of creation",
+      "proof of origin",
+      "proof of derivation",
+      "proof of lineage",
+      "proof of mutation",
+      "proof of deterministic reproducibility"
+    ]
+  },
+  "minimum_valid_prs_001_asset_requirements": [
+    "asset identifier",
+    "asset URI or metadata URI",
+    "SHA-256 anchor hash",
+    "leading-zero bit count",
+    "rarity class",
+    "proof object",
+    "Merkle leaf",
+    "collection root or standalone attestation",
+    "verification procedure"
+  ],
+  "rarity_classes_16_to_44": [
+    {
+      "leading_zero_bits": 16,
+      "hex_equivalent": "4 full hex zeroes",
+      "approximate_odds": "1 in 65,536",
+      "suggested_class": "Proof"
+    },
+    {
+      "leading_zero_bits": 17,
+      "hex_equivalent": "4 hex zeroes + 1 bit",
+      "approximate_odds": "1 in 131,072",
+      "suggested_class": "Proof+"
+    },
+    {
+      "leading_zero_bits": 18,
+      "hex_equivalent": "4 hex zeroes + 2 bits",
+      "approximate_odds": "1 in 262,144",
+      "suggested_class": "Proof+"
+    },
+    {
+      "leading_zero_bits": 19,
+      "hex_equivalent": "4 hex zeroes + 3 bits",
+      "approximate_odds": "1 in 524,288",
+      "suggested_class": "Proof+"
+    },
+    {
+      "leading_zero_bits": 20,
+      "hex_equivalent": "5 full hex zeroes",
+      "approximate_odds": "1 in 1,048,576",
+      "suggested_class": "Uncommon Proof"
+    },
+    {
+      "leading_zero_bits": 21,
+      "hex_equivalent": "5 hex zeroes + 1 bit",
+      "approximate_odds": "1 in 2,097,152",
+      "suggested_class": "Uncommon+"
+    },
+    {
+      "leading_zero_bits": 22,
+      "hex_equivalent": "5 hex zeroes + 2 bits",
+      "approximate_odds": "1 in 4,194,304",
+      "suggested_class": "Uncommon+"
+    },
+    {
+      "leading_zero_bits": 23,
+      "hex_equivalent": "5 hex zeroes + 3 bits",
+      "approximate_odds": "1 in 8,388,608",
+      "suggested_class": "Uncommon+"
+    },
+    {
+      "leading_zero_bits": 24,
+      "hex_equivalent": "6 full hex zeroes",
+      "approximate_odds": "1 in 16,777,216",
+      "suggested_class": "Rare Proof"
+    },
+    {
+      "leading_zero_bits": 25,
+      "hex_equivalent": "6 hex zeroes + 1 bit",
+      "approximate_odds": "1 in 33,554,432",
+      "suggested_class": "Rare+"
+    },
+    {
+      "leading_zero_bits": 26,
+      "hex_equivalent": "6 hex zeroes + 2 bits",
+      "approximate_odds": "1 in 67,108,864",
+      "suggested_class": "Rare+"
+    },
+    {
+      "leading_zero_bits": 27,
+      "hex_equivalent": "6 hex zeroes + 3 bits",
+      "approximate_odds": "1 in 134,217,728",
+      "suggested_class": "Rare+"
+    },
+    {
+      "leading_zero_bits": 28,
+      "hex_equivalent": "7 full hex zeroes",
+      "approximate_odds": "1 in 268,435,456",
+      "suggested_class": "Epic Proof"
+    },
+    {
+      "leading_zero_bits": 29,
+      "hex_equivalent": "7 hex zeroes + 1 bit",
+      "approximate_odds": "1 in 536,870,912",
+      "suggested_class": "Epic+"
+    },
+    {
+      "leading_zero_bits": 30,
+      "hex_equivalent": "7 hex zeroes + 2 bits",
+      "approximate_odds": "1 in 1,073,741,824",
+      "suggested_class": "Epic+"
+    },
+    {
+      "leading_zero_bits": 31,
+      "hex_equivalent": "7 hex zeroes + 3 bits",
+      "approximate_odds": "1 in 2,147,483,648",
+      "suggested_class": "Epic+"
+    },
+    {
+      "leading_zero_bits": 32,
+      "hex_equivalent": "8 full hex zeroes",
+      "approximate_odds": "1 in 4,294,967,296",
+      "suggested_class": "Legendary Proof"
+    },
+    {
+      "leading_zero_bits": 33,
+      "hex_equivalent": "8 hex zeroes + 1 bit",
+      "approximate_odds": "1 in 8,589,934,592",
+      "suggested_class": "Legendary+"
+    },
+    {
+      "leading_zero_bits": 34,
+      "hex_equivalent": "8 hex zeroes + 2 bits",
+      "approximate_odds": "1 in 17,179,869,184",
+      "suggested_class": "Legendary+"
+    },
+    {
+      "leading_zero_bits": 35,
+      "hex_equivalent": "8 hex zeroes + 3 bits",
+      "approximate_odds": "1 in 34,359,738,368",
+      "suggested_class": "Legendary+"
+    },
+    {
+      "leading_zero_bits": 36,
+      "hex_equivalent": "9 full hex zeroes",
+      "approximate_odds": "1 in 68,719,476,736",
+      "suggested_class": "Mythic Proof"
+    },
+    {
+      "leading_zero_bits": 37,
+      "hex_equivalent": "9 hex zeroes + 1 bit",
+      "approximate_odds": "1 in 137,438,953,472",
+      "suggested_class": "Mythic+"
+    },
+    {
+      "leading_zero_bits": 38,
+      "hex_equivalent": "9 hex zeroes + 2 bits",
+      "approximate_odds": "1 in 274,877,906,944",
+      "suggested_class": "Mythic+"
+    },
+    {
+      "leading_zero_bits": 39,
+      "hex_equivalent": "9 hex zeroes + 3 bits",
+      "approximate_odds": "1 in 549,755,813,888",
+      "suggested_class": "Mythic+"
+    },
+    {
+      "leading_zero_bits": 40,
+      "hex_equivalent": "10 full hex zeroes",
+      "approximate_odds": "1 in 1,099,511,627,776",
+      "suggested_class": "Genesis Proof"
+    },
+    {
+      "leading_zero_bits": 41,
+      "hex_equivalent": "10 hex zeroes + 1 bit",
+      "approximate_odds": "1 in 2,199,023,255,552",
+      "suggested_class": "Genesis+"
+    },
+    {
+      "leading_zero_bits": 42,
+      "hex_equivalent": "10 hex zeroes + 2 bits",
+      "approximate_odds": "1 in 4,398,046,511,104",
+      "suggested_class": "Genesis+"
+    },
+    {
+      "leading_zero_bits": 43,
+      "hex_equivalent": "10 hex zeroes + 3 bits",
+      "approximate_odds": "1 in 8,796,093,022,208",
+      "suggested_class": "Genesis+"
+    },
+    {
+      "leading_zero_bits": 44,
+      "hex_equivalent": "11 full hex zeroes",
+      "approximate_odds": "1 in 17,592,186,044,416",
+      "suggested_class": "Crown Proof"
+    }
+  ],
+  "recommended_genesis_drop": {
+    "collection_name": "DigitalOwnership Genesis: Provably Rare",
+    "collection_size_options": [
+      33,
+      111,
+      144
+    ],
+    "recommended_collection_size": 111,
+    "rarity_range": [
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      44
+    ],
+    "proof_path": [
+      "asset",
+      "asset_metadata",
+      "entropy_anchor_hash",
+      "prs_001_proof_object",
+      "merkle_leaf",
+      "collection_merkle_root",
+      "public_verification"
+    ],
+    "initial_root_model": "single_collection_merkle_root",
+    "advanced_root_model_status": "reserved_for_future_extensions"
+  },
+  "public_standard_components": [
+    "rarity ladder",
+    "anchor object format",
+    "proof object format",
+    "metadata schema",
+    "Merkle leaf construction",
+    "single-root collection proof method",
+    "verification procedure",
+    "reference verifier",
+    "example low-rarity anchors",
+    "developer documentation"
+  ],
+  "private_or_licensed_components": [
+    "rare unused hash inventory",
+    "private seed data",
+    "preimages",
+    "nonce logs",
+    "mining session logs",
+    "deterministic generation parameters",
+    "premium reproduction engines",
+    "unrevealed collection manifests",
+    "advanced commercial APIs"
+  ],
+  "proof_types_enabled": [
+    "proof of rarity",
+    "proof of inclusion",
+    "proof of metadata",
+    "proof of provenance",
+    "proof of entropic work",
+    "proof of scarcity",
+    "proof of ownership context"
+  ],
+  "future_proof_types": [
+    "proof of creation",
+    "proof of origin",
+    "proof of derivation",
+    "proof of lineage",
+    "proof of mutation",
+    "proof of deterministic reproducibility"
+  ]
+}
