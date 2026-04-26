@@ -1,0 +1,66 @@
+{
+  "standard": "PRS-001",
+  "standard_name": "Provably Rare Standard",
+  "standard_family": "DigitalOwnership Proof Standards",
+  "project": "DigitalOwnership",
+  "asset_name": "DigitalOwnership Genesis Example #001",
+  "asset_description": "Example PRS-001 proof object demonstrating a cryptographic rarity anchor for a digital asset.",
+  "asset_uri": "ipfs://example-asset-cid",
+  "metadata_uri": "ipfs://example-metadata-cid",
+  "hash_algorithm": "SHA-256",
+  "anchor_hash": "0000000000abcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcd",
+  "leading_zero_bits": 40,
+  "leading_hex_zeroes": 10,
+  "rarity_class": "Genesis Proof",
+  "approximate_odds": "1 in 1,099,511,627,776",
+  "proof_type": "cryptographic_rarity_anchor",
+  "proof_object_version": "0.1.0-genesis",
+  "merkle_leaf": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "merkle_proof": [
+    {
+      "position": "left",
+      "hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "position": "right",
+      "hash": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    }
+  ],
+  "collection_root": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "collection_name": "DigitalOwnership Genesis: Provably Rare",
+  "collection_size": 111,
+  "token_standard": "ERC-721",
+  "contract_address": "0x0000000000000000000000000000000000000000",
+  "token_id": "1",
+  "chain": "Ethereum",
+  "attestation_uri": "ipfs://example-attestation-cid",
+  "verification_url": "https://digitalownership.org/verify/example-001",
+  "public_private_boundary": {
+    "public_data": [
+      "asset_name",
+      "asset_uri",
+      "metadata_uri",
+      "anchor_hash",
+      "leading_zero_bits",
+      "leading_hex_zeroes",
+      "rarity_class",
+      "approximate_odds",
+      "merkle_leaf",
+      "merkle_proof",
+      "collection_root",
+      "verification_url"
+    ],
+    "private_or_licensed_data": [
+      "seed",
+      "preimage",
+      "nonce",
+      "timestamp",
+      "mining_session_logs",
+      "deterministic_generation_parameters",
+      "reproduction_secrets"
+    ]
+  },
+  "created_utc": "2026-04-25T00:00:00Z",
+  "creator": "Brandon Wells",
+  "notes": "This is a non-production example object. Placeholder hashes and URIs are used for documentation only."
+}
