@@ -1,0 +1,85 @@
+{
+  "name": "DigitalOwnership Genesis Example #001",
+  "description": "An example NFT metadata object using PRS-001: Provably Rare Standard, a DigitalOwnership Proof Standard.",
+  "image": "ipfs://example-asset-cid",
+  "animation_url": "ipfs://example-animation-cid",
+  "external_url": "https://digitalownership.org/verify/example-001",
+  "attributes": [
+    {
+      "trait_type": "Standard",
+      "value": "PRS-001"
+    },
+    {
+      "trait_type": "Standard Name",
+      "value": "Provably Rare Standard"
+    },
+    {
+      "trait_type": "Hash Algorithm",
+      "value": "SHA-256"
+    },
+    {
+      "trait_type": "Leading Zero Bits",
+      "value": 40
+    },
+    {
+      "trait_type": "Leading Hex Zeroes",
+      "value": 10
+    },
+    {
+      "trait_type": "Rarity Class",
+      "value": "Genesis Proof"
+    },
+    {
+      "trait_type": "Approximate Odds",
+      "value": "1 in 1,099,511,627,776"
+    },
+    {
+      "trait_type": "Proof Type",
+      "value": "Cryptographic Rarity Anchor"
+    },
+    {
+      "trait_type": "Collection Root Model",
+      "value": "Single Merkle Root"
+    }
+  ],
+  "digitalownership": {
+    "standard": "PRS-001",
+    "standard_name": "Provably Rare Standard",
+    "standard_family": "DigitalOwnership Proof Standards",
+    "proof_object_version": "0.1.0-genesis",
+    "hash_algorithm": "SHA-256",
+    "anchor_hash": "0000000000abcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcd",
+    "leading_zero_bits": 40,
+    "leading_hex_zeroes": 10,
+    "rarity_class": "Genesis Proof",
+    "approximate_odds": "1 in 1,099,511,627,776",
+    "proof_type": "cryptographic_rarity_anchor",
+    "merkle_leaf": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "merkle_proof_uri": "ipfs://example-merkle-proof-cid",
+    "collection_root": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "collection_name": "DigitalOwnership Genesis: Provably Rare",
+    "collection_size": 111,
+    "verification_url": "https://digitalownership.org/verify/example-001",
+    "attestation_uri": "ipfs://example-attestation-cid",
+    "public_private_boundary": {
+      "public_data": [
+        "asset metadata",
+        "anchor hash",
+        "leading-zero rarity class",
+        "Merkle leaf",
+        "Merkle proof",
+        "collection root",
+        "verification URL"
+      ],
+      "private_or_licensed_data": [
+        "seed",
+        "preimage",
+        "nonce",
+        "timestamp",
+        "mining session logs",
+        "deterministic generation parameters",
+        "reproduction secrets"
+      ]
+    }
+  }
+}
