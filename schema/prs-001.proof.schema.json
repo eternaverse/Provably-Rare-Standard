@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://digitalownership.org/schemas/prs-001.proof.schema.json",
+  "title": "PRS-001 Proof Object",
+  "description": "A machine-readable proof object for PRS-001: Provably Rare Standard, a DigitalOwnership Proof Standard.",
+  "type": "object",
+  "required": [
+    "standard",
+    "standard_name",
+    "standard_family",
+    "asset_name",
+    "asset_uri",
+    "hash_algorithm",
+    "anchor_hash",
+    "leading_zero_bits",
+    "rarity_class",
+    "approximate_odds",
+    "proof_type"
+  ],
+  "properties": {
+    "standard": {
+      "type": "string",
+      "const": "PRS-001"
+    },
+    "standard_name": {
+      "type": "string",
+      "const": "Provably Rare Standard"
+    },
+    "standard_family": {
+      "type": "string",
+      "const": "DigitalOwnership Proof Standards"
+    },
+    "project": {
+      "type": "string",
+      "default": "DigitalOwnership"
+    },
+    "asset_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "asset_description": {
+      "type": "string"
+    },
+    "asset_uri": {
+      "type": "string",
+      "description": "URI for the asset, such as ipfs://, ar://, https://, or another content-addressed or registry URI."
+    },
+    "metadata_uri": {
+      "type": "string",
+      "description": "URI for associated NFT or asset metadata."
+    },
+    "hash_algorithm": {
+      "type": "string",
+      "const": "SHA-256"
+    },
+    "anchor_hash": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$",
+      "description": "A 64-character hexadecimal SHA-256 digest."
+    },
+    "leading_zero_bits": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 256
+    },
+    "leading_hex_zeroes": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 64
+    },
+    "rarity_class": {
+      "type": "string",
+      "enum": [
+        "Proof",
+        "Proof+",
+        "Uncommon Proof",
+        "Uncommon+",
+        "Rare Proof",
+        "Rare+",
+        "Epic Proof",
+        "Epic+",
+        "Legendary Proof",
+        "Legendary+",
+        "Mythic Proof",
+        "Mythic+",
+        "Genesis Proof",
+        "Genesis+",
+        "Crown Proof",
+        "Sovereign Proof",
+        "Custom"
+      ]
+    },
+    "approximate_odds": {
+      "type": "string",
+      "description": "Human-readable approximate odds, usually expressed as '1 in 2^n' or expanded integer notation."
+    },
+    "proof_type": {
+      "type": "string",
+      "enum": [
+        "cryptographic_rarity_anchor",
+        "standalone_attestation",
+        "collection_inclusion",
+        "custom"
+      ]
+    },
+    "proof_object_version": {
+      "type": "string",
+      "default": "0.1.0-genesis"
+    },
+    "merkle_leaf": {
+      "type": "string",
+      "description": "SHA-256 Merkle leaf derived from the canonicalized proof object."
+    },
+    "merkle_proof": {
+      "type": "array",
+      "description": "Array of sibling hashes and positions needed to verify inclusion in the collection root.",
+      "items": {
+        "type": "object",
+        "required": [
+          "position",
+          "hash"
+        ],
+        "properties": {
+          "position": {
+            "type": "string",
+            "enum": [
+              "left",
+              "right"
+            ]
+          },
+          "hash": {
+            "type": "string",
+            "pattern": "^(sha256:)?[a-fA-F0-9]{64}$"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "collection_root": {
+      "type": "string",
+      "description": "Merkle root committing the collection of PRS-001 proof objects.",
+      "pattern": "^(sha256:)?[a-fA-F0-9]{64}$"
+    },
+    "collection_name": {
+      "type": "string"
+    },
+    "collection_size": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "token_standard": {
+      "type": "string",
+      "enum": [
+        "ERC-721",
+        "ERC-1155",
+        "ERC-20",
+        "Ordinals",
+        "Custom",
+        "None"
+      ]
+    },
+    "contract_address": {
+      "type": "string"
+    },
+    "token_id": {
+      "type": "string"
+    },
+    "chain": {
+      "type": "string",
+      "description": "Blockchain or registry where the asset, attestation, or token is published."
+    },
+    "attestation_uri": {
+      "type": "string"
+    },
+    "verification_url": {
+      "type": "string"
+    },
+    "public_private_boundary": {
+      "type": "object",
+      "properties": {
+        "public_data": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "private_or_licensed_data": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "created_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "creator": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
