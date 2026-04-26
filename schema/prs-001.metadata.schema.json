@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://digitalownership.org/schemas/prs-001.metadata.schema.json",
+  "title": "PRS-001 NFT Metadata",
+  "description": "NFT-compatible metadata schema for assets using PRS-001: Provably Rare Standard.",
+  "type": "object",
+  "required": [
+    "name",
+    "description",
+    "image",
+    "attributes",
+    "digitalownership"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "image": {
+      "type": "string",
+      "description": "Primary image URI, such as ipfs://, ar://, or https://."
+    },
+    "animation_url": {
+      "type": "string",
+      "description": "Optional animation, interactive file, video, HTML, or dynamic asset URI."
+    },
+    "external_url": {
+      "type": "string",
+      "description": "Public verification, project, or asset page."
+    },
+    "attributes": {
+      "type": "array",
+      "description": "Marketplace-compatible NFT attributes.",
+      "items": {
+        "type": "object",
+        "required": [
+          "trait_type",
+          "value"
+        ],
+        "properties": {
+          "trait_type": {
+            "type": "string"
+          },
+          "value": {
+            "type": [
+              "string",
+              "number",
+              "integer",
+              "boolean"
+            ]
+          },
+          "display_type": {
+            "type": "string"
+          },
+          "max_value": {
+            "type": [
+              "number",
+              "integer"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "digitalownership": {
+      "type": "object",
+      "description": "PRS-001 DigitalOwnership proof data attached to marketplace-compatible metadata.",
+      "required": [
+        "standard",
+        "standard_name",
+        "standard_family",
+        "hash_algorithm",
+        "anchor_hash",
+        "leading_zero_bits",
+        "rarity_class",
+        "approximate_odds",
+        "proof_type"
+      ],
+      "properties": {
+        "standard": {
+          "type": "string",
+          "const": "PRS-001"
+        },
+        "standard_name": {
+          "type": "string",
+          "const": "Provably Rare Standard"
+        },
+        "standard_family": {
+          "type": "string",
+          "const": "DigitalOwnership Proof Standards"
+        },
+        "proof_object_version": {
+          "type": "string",
+          "default": "0.1.0-genesis"
+        },
+        "hash_algorithm": {
+          "type": "string",
+          "const": "SHA-256"
+        },
+        "anchor_hash": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "leading_zero_bits": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 256
+        },
+        "leading_hex_zeroes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 64
+        },
+        "rarity_class": {
+          "type": "string"
+        },
+        "approximate_odds": {
+          "type": "string"
+        },
+        "proof_type": {
+          "type": "string"
+        },
+        "merkle_leaf": {
+          "type": "string"
+        },
+        "merkle_proof_uri": {
+          "type": "string",
+          "description": "URI pointing to the full Merkle proof object."
+        },
+        "collection_root": {
+          "type": "string",
+          "pattern": "^(sha256:)?[a-fA-F0-9]{64}$"
+        },
+        "collection_name": {
+          "type": "string"
+        },
+        "collection_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "verification_url": {
+          "type": "string"
+        },
+        "attestation_uri": {
+          "type": "string"
+        },
+        "public_private_boundary": {
+          "type": "object",
+          "properties": {
+            "public_data": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "private_or_licensed_data": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
