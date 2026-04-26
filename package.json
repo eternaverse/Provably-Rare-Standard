@@ -1,0 +1,27 @@
+{
+  "name": "provably-rare-standard",
+  "version": "0.1.0-genesis",
+  "description": "PRS-001: Provably Rare Standard — a DigitalOwnership Proof Standard for cryptographic rarity and provenance.",
+  "main": "src/verify-leading-zeroes.js",
+  "scripts": {
+    "verify": "node src/verify-leading-zeroes.js",
+    "example": "node src/verify-leading-zeroes.js 0000000000abcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcd"
+  },
+  "keywords": [
+    "prs-001",
+    "provably-rare",
+    "digitalownership",
+    "nft",
+    "sha256",
+    "provenance",
+    "cryptographic-rarity",
+    "merkle",
+    "digital-ownership"
+  ],
+  "author": "Brandon Wells",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eternaverse/provably-rare-standard.git"
+  }
+}
