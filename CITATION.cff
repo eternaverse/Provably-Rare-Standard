@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use, reference, implement, fork, cite, or build upon PRS-001: Provably Rare Standard, please cite this repository and the initial creator."
+title: "PRS-001: Provably Rare Standard"
+type: "software"
+abstract: "PRS-001 defines a cryptographic rarity and provenance standard for digital assets. It enables NFTs, artworks, model outputs, datasets, documents, media files, and other digital artifacts to be anchored to SHA-256 entropy hashes, assigned mathematically verifiable leading-zero rarity classes, committed into public proof structures, and verified through reproducible procedures."
+authors:
+  - family-names: "Wells"
+    given-names: "Brandon"
+repository-code: "https://github.com/eternaverse/provably-rare-standard"
+url: "https://digitalownership.org"
+version: "0.1.0-genesis"
+date-released: "2026-04-25"
+keywords:
+  - PRS-001
+  - Provably Rare Standard
+  - DigitalOwnership
+  - cryptographic rarity
+  - NFT provenance
+  - SHA-256
+  - Merkle proof
+  - digital ownership
+license: "MIT"
